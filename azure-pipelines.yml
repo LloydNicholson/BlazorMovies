@@ -22,7 +22,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
-    projects: '*.sln'
+    projects: '**/*.sln'
     feedsToUse: 'select'
  
 - script: dotnet build --configuration $(buildConfiguration)
