@@ -11,7 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  myproject: 'BlazorMovies/ASP.NET Core 3.2 - Preview 2/Module 8 - Deployment/BlazorMoviesAzureDevOps/BlazorMovies/Server/BlazorMovies.Server.csproj'
+  myproject: 'ASP.NET Core 3.2 - Preview 2/Module 8 - Deployment/BlazorMoviesAzureDevOps/BlazorMovies/Server/BlazorMovies.Server.csproj'
 
 steps:
 - task: UseDotNet@2
