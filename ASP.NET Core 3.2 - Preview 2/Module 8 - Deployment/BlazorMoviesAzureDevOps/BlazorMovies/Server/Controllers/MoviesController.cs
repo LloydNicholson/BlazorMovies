@@ -62,6 +62,22 @@ namespace BlazorMovies.Server.Controllers
 
         }
 
+        [HttpGet]
+        [Route("allmoviestest")]
+        [AllowAnonymous]
+        public ActionResult<List<Movie>> GetAllMoviesTest()
+        {
+            Console.WriteLine("Hit endpoint");
+            return new List<Movie>()
+            {
+                new Movie()
+                {
+                    Title = "Movie Test title"
+                }
+            };
+        }
+
+
         [HttpGet("{id}")]
         [AllowAnonymous]
         public async Task<ActionResult<DetailsMovieDTO>> Get(int id)

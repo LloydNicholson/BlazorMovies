@@ -46,6 +46,14 @@ namespace BlazorMovies.Client.Repository
             return paginatedResponse;
         }
 
+        public async Task<List<Movie>> GetTestMovies()
+        {
+            var responseHTTP = await httpService.Get<List<Movie>>($"{url}/allmoviestest");
+
+            return responseHTTP.Response;
+        }
+
+
         public async Task<int> CreateMovie(Movie movie)
         {
             var response = await httpService.Post<Movie, int>(url, movie);

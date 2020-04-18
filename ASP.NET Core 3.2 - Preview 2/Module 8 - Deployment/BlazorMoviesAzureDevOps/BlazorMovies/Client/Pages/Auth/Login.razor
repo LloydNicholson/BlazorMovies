@@ -3,6 +3,7 @@
 @inject IAccountsRepository accountsRepository
 @inject NavigationManager navigationManager
 @inject ILoginService loginService
+@inject IMoviesRepository moviesRepo
 
 @using BlazorMovies.Client.Auth
 
@@ -29,15 +30,31 @@
 
     <button type="submit" class="btn btn-primary">Login</button>
 
+    @if (Movies != null)
+    {
+        <ul>
+            @foreach (var movie in Movies)
+            {
+                <li>@movie.TitleBrief</li>
+            }
+        </ul>
+    }
+
 </EditForm>
 
 @code {
     private UserInfo userInfo = new UserInfo();
+    public List<Movie> Movies { get; set; }
 
     private async Task CreateUser()
     {
         var userToken = await accountsRepository.Login(userInfo);
         await loginService.Login(userToken.Token);
         navigationManager.NavigateTo("");
+    }
+
+    protected async override Task OnInitializedAsync()
+    {
+        Movies = await moviesRepo.GetTestMovies();
     }
 }
