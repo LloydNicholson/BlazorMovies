@@ -11,7 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  myproject: 'ASP.NET Core 3.2 - Preview 2/Module 8 - Deployment/BlazorMoviesAzureDevOps/BlazorMovies/Server/BlazorMovies.Server.csproj'
+  myproject: 'ASP.NET Core 3.2 - Preview 2/Module 5 - Forms/End/Server/BlazorMovies.Server.csproj'
 
 steps:
 - task: UseDotNet@2
@@ -23,7 +23,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: 'ASP.NET Core 3.2 - Preview 2/Module 8 - Deployment/BlazorMoviesAzureDevOps/**/*.csproj'
+    projects: 'ASP.NET Core 3.2 - Preview 2/Module 5 - Forms/End/**/*.csproj'
   
 # - task: CmdLine@2
 #   displayName: 'Installing EF Core CLI tools'
